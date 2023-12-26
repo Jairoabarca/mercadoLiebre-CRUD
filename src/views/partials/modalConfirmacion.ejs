@@ -1,0 +1,35 @@
+<div class="modal fade" id="warningRemoveModal<%= id %>" tabindex="-1" aria-labelledby="warningRemoveModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="warningRemoveModalLabel">ADVERTENCIA</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h4>
+                    <span class="text-danger fs-3"><i class="fa-solid fa-triangle-exclamation"></i></span> 
+                    ¿Desea eliminar el producto: <%= name %>?
+                </h4>
+                <form action="/products/delete/<%= id %>?_method=DELETE" method="POST" style="display: inline-flex">
+                    <!--<button type="submit" class="action-button delete">ELIMINAR</button>-->
+                    <div class="d-flex justify-content-end gap-3">
+                        <button type="button" class="btn btn-sm btn-outline-secondary"
+                            data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-sm btn-outline-danger">
+                            Sí, eliminalo
+                        </button>
+                    </div>
+                </form>
+                <!--<form action="/productos/eliminar/<%= id %>?_method=DELETE" method="POST" style="display: inline-flex"></form>>
+                    <div class="d-flex justify-content-end gap-3">
+                        <button type="button" class="btn btn-sm btn-outline-secondary"
+                            data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-sm btn-outline-danger">
+                            Sí, eliminalo
+                        </button>
+                    </div>
+                </form>-->
+            </div>
+        </div>
+    </div>
+</div>
